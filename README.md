@@ -25,3 +25,4 @@ Install pygame-ce
 ```bash
 ni pygame-ce
 ```
+<italic>ni = npm install</italic>

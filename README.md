@@ -4,6 +4,8 @@ Requirements
 pygame
 
 ## What does Pygame do?
+https://www.pygame.org/docs/
+
 Draw images and play sounds
 Get user inputs
 Get and Set positions
@@ -23,6 +25,12 @@ Fully compatible with pygame
 
 Install pygame-ce
 ```bash
-ni pygame-ce
+pip install pygame-ce
 ```
 <italic>ni = npm install</italic>
+
+## Display Surface
+The canvas that everything will be drawn on, you can only have one at a time.
+
+## Event Loop
+Checks Events - (Click, keyboard, controller input, timers) , keys to start or close game

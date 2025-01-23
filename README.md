@@ -13,4 +13,15 @@ Get time, collisions, transform images, color etc
 Con:
 Has a limited toolset like Godot or Unity
 
+### Pygame vs Pygame-ce (Community Edition)
+Pygame-ce is better because it has :
+More features
+Bigger Community
+Gets Updated
+Runs better
+Fully compatible with pygame
 
+Install pygame-ce
+```bash
+ni pygame-ce
+```

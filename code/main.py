@@ -16,5 +16,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    #draw the game
+    display_surface.fill('red')
+    pygame.display.update()
+
+
 # Close the game properly
 pygame.quit()

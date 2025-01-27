@@ -18,6 +18,13 @@ surf = pygame.Surface((100, 200))
 surf.fill("red")
 x = 100
 
+#importing an image
+target_surf = pygame.image.load('images/target.svg')
+
+# Resize the image
+new_width, new_height = 100, 100 
+target_surf = pygame.transform.scale(target_surf, (new_width, new_height))
+
 #event loop
 while running:
     for event in pygame.event.get():
@@ -27,7 +34,7 @@ while running:
     #draw the game
     display_surface.fill('#999999')
     x += 0.1
-    display_surface.blit(surf, (x, 150))
+    display_surface.blit(target_surf, (x, 150))
     pygame.display.update()
 
 

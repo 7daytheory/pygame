@@ -19,11 +19,8 @@ surf.fill("red")
 x = 100
 
 #importing an image
-target_surf = pygame.image.load('images/target.svg')
-
-# Resize the image
-new_width, new_height = 100, 100 
-target_surf = pygame.transform.scale(target_surf, (new_width, new_height))
+# Made the image 100 x 100 rather than resizing it with transform.scale
+target_surf = pygame.image.load('images/target.png')
 
 #event loop
 while running:

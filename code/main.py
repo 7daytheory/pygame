@@ -15,6 +15,8 @@ pygame.display.set_caption(title, "Enjoy!")
 
 #Surface
 surf = pygame.Surface((100, 200))
+surf.fill("red")
+x = 100
 
 #event loop
 while running:
@@ -24,7 +26,8 @@ while running:
 
     #draw the game
     display_surface.fill('#999999')
-    display_surface.blit(surf, (100, 150))
+    x += 0.1
+    display_surface.blit(surf, (x, 150))
     pygame.display.update()
 
 

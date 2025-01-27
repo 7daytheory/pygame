@@ -88,3 +88,7 @@ When importing an image, you want to convert it to a format that Pygame can work
 If the image has no transparent pixels : .convert()
 If the image has transparent pixesl: convert_alpha()
 This will make the game run much faster
+
+### Display order
+The display order is important, in this example there's a background fill, a target that moves and a bunch of random footballs. If the background was created last we would only see the background.
+So we want the target on top of everything, so it should be the last thing drawn on the display canvas, and the background should be the first thing drawn.

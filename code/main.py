@@ -35,9 +35,9 @@ while running:
     #draw the game
     display_surface.fill('#999999')
     x += 0.1
-    display_surface.blit(target_surf, (x, 150))
     for pos in football_pos:
         display_surface.blit(football_surf, pos)
+    display_surface.blit(target_surf, (x, 150))
     pygame.display.update()
 
 

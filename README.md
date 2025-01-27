@@ -83,3 +83,8 @@ So in VS Code the url would be images/image_name.png if you're in the main folde
 
 Depending on your OS you might need a different slash in the file path - images/image_name.png or images\player.png.
 You should make the paths dynamic
+
+When importing an image, you want to convert it to a format that Pygame can work more easily. 
+If the image has no transparent pixels : .convert()
+If the image has transparent pixesl: convert_alpha()
+This will make the game run much faster

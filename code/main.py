@@ -1,4 +1,5 @@
 import pygame
+from os.path import join
 
 #general setup
 pygame.init()
@@ -19,8 +20,8 @@ surf.fill("red")
 x = 100
 
 #importing an image
-# Made the image 100 x 100 rather than resizing it with transform.scale
-target_surf = pygame.image.load('images/target.png')
+path = join('images', 'target.png')
+target_surf = pygame.image.load(path).convert_alpha()
 
 #event loop
 while running:

@@ -1,4 +1,5 @@
 import pygame
+from os.path import join
 
 #general setup
 pygame.init()
@@ -13,6 +14,15 @@ running = True
 title = "Awesome Game Title"
 pygame.display.set_caption(title, "Enjoy!")
 
+#Surface
+surf = pygame.Surface((100, 200))
+surf.fill("red")
+x = 100
+
+#importing an image
+path = join('images', 'target.png')
+target_surf = pygame.image.load(path).convert_alpha()
+
 #event loop
 while running:
     for event in pygame.event.get():
@@ -20,7 +30,9 @@ while running:
             running = False
 
     #draw the game
-    display_surface.fill('#333333')
+    display_surface.fill('#999999')
+    x += 0.1
+    display_surface.blit(target_surf, (x, 150))
     pygame.display.update()
 
 

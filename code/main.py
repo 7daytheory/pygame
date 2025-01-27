@@ -13,6 +13,9 @@ running = True
 title = "Awesome Game Title"
 pygame.display.set_caption(title, "Enjoy!")
 
+#Surface
+surf = pygame.Surface((100, 200))
+
 #event loop
 while running:
     for event in pygame.event.get():
@@ -20,7 +23,8 @@ while running:
             running = False
 
     #draw the game
-    display_surface.fill('#333333')
+    display_surface.fill('#999999')
+    display_surface.blit(surf, (100, 150))
     pygame.display.update()
 
 

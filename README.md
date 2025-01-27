@@ -66,3 +66,6 @@ Example of a general surface:
 my_surface = pygame.Surface((200, 200))  # Create a surface of size 200x200
 my_surface.fill((255, 0, 0))  # Fill the surface with red color
 ```
+
+## Adding a Surface to a Display Surface
+The surface was created using pygame.Surface((100, 200)), representing an off-screen canvas of 100x200 pixels. This surface was added to the display_surface (the main screen) using the blit method: display_surface.blit(surface_variable, (100, 150)). The blit function places the surface at coordinates (100, 150) on the display_surface, making it visible when pygame.display.update() is called.

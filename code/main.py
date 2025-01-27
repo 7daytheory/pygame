@@ -23,9 +23,9 @@ x = 100
 #importing an image
 target_path = join('images', 'target.png')
 target_surf = pygame.image.load(target_path).convert_alpha()
-football_path = join('images', 'football.png')
-football_surf = pygame.image.load(football_path).convert_alpha()
-football_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
+pylon_path = join('images', 'pylon.png')
+pylon_surf = pygame.image.load(pylon_path).convert_alpha()
+pylon_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
 
 #event loop
 while running:
@@ -35,8 +35,8 @@ while running:
     #draw the game
     display_surface.fill('#999999')
     x += 0.1
-    for pos in football_pos:
-        display_surface.blit(football_surf, pos)
+    for pos in pylon_pos:
+        display_surface.blit(pylon_surf, pos)
     display_surface.blit(target_surf, (x, 150))
     pygame.display.update()
 

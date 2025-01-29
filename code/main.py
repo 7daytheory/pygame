@@ -29,6 +29,7 @@ enemy_surf = pygame.image.load(join("images", "enemy.png")).convert_alpha()
 
 #Keep the main image(you) on the top of all other images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
+player_rect = player_surf.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
 #event loop
 while running:
@@ -40,7 +41,7 @@ while running:
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
     display_surface.blit(enemy_surf, (enemy_x, 450))
-    display_surface.blit(player_surf, (x, 150))
+    display_surface.blit(player_surf, player_rect)
     pygame.display.update()
 
 

@@ -92,3 +92,24 @@ This will make the game run much faster
 ### Display order
 The display order is important, in this example there's a background fill, a target that moves and a bunch of random footballs. If the background was created last we would only see the background.
 So we want the target on top of everything, so it should be the last thing drawn on the display canvas, and the background should be the first thing drawn.
+
+## Rects
+Places surfaces more elegantly
+Detect collisions
+Can be drawn
+
+### Placing Surfaces Sucks
+Since we always place the topleft it requires math to place it in a precist spot
+Sometimes we just need to place the center or the right side of a surface
+Rects can do this very well
+
+Rects are hyst rectangles with a size and a position
+They also have a lot of points :
+<strong>Tuples</stronhg> of an x and y position
+X or y positions
+There is aldo width, height, and size
+Each point can be measured and changed
+The points stay relative to each other - moving one you move all
+
+positions: topleft, midtop, topright, midright, bottomright, midbottom, bottomleft, midleft
+top, right, bottomn, left

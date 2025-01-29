@@ -44,8 +44,8 @@ while running:
     enemy_x += 0.2
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(ship_surf, (x, 150))
     display_surface.blit(enemy_surf, (enemy_x, 450))
+    display_surface.blit(player_surf, (x, 150))
     pygame.display.update()
 
 

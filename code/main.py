@@ -21,11 +21,11 @@ surf.fill("red")
 x = 100
 
 #importing an image
-target_path = join('images', 'target.png')
-target_surf = pygame.image.load(target_path).convert_alpha()
-pylon_path = join('images', 'pylon.png')
-pylon_surf = pygame.image.load(pylon_path).convert_alpha()
-pylon_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
+ship_path = join('images', 'ship.png')
+ship_surf = pygame.image.load(ship_path).convert_alpha()
+star_path = join('images', 'star.png')
+star_surf = pygame.image.load(star_path).convert_alpha()
+star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
 
 #event loop
 while running:
@@ -35,9 +35,9 @@ while running:
     #draw the game
     display_surface.fill('#999999')
     x += 0.1
-    for pos in pylon_pos:
-        display_surface.blit(pylon_surf, pos)
-    display_surface.blit(target_surf, (x, 150))
+    for pos in star_pos:
+        display_surface.blit(star_surf, pos)
+    display_surface.blit(ship_surf, (x, 150))
     pygame.display.update()
 
 

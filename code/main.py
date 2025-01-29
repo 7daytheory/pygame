@@ -41,6 +41,7 @@ while running:
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
     display_surface.blit(enemy_surf, (enemy_x, 450))
+    player_rect.left += 0.2
     display_surface.blit(player_surf, player_rect)
     pygame.display.update()
 

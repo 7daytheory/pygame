@@ -120,6 +120,11 @@ top, right, bottomn, left
 They are nearly identical, the only difference is that FRects store data as floating point values while Rects use integers
 FRects are usually better since they are more precise
 
+Small Example:
+When moving player(ship) from left to right side we add it's value by 0.1 per frame
+frect will do this as expected
+rect will not because it is just an int and does not accept decimals so the 0.1 value getting added to it will get cancelled out every time
+
 ### Creating Rects
 You can create a rect from scratch
 pygame.Rect(pos, size)
@@ -129,3 +134,4 @@ Or you can create it from a surface (which is much more common):
 rect will have the game size as surface
 surface.get_rect(point = pos)
 surface.get_freact(point = pos)
+

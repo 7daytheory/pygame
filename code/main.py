@@ -22,7 +22,7 @@ enemy_x = 50
 x = 100
 
 #importing an image
-star_path = join('images', 'star.png')
+star_path = join('images', 'palyer.png')
 star_surf = pygame.image.load(star_path).convert_alpha()
 star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
 
@@ -30,8 +30,8 @@ enemy_path = join("images", "enemy.png")
 enemy_surf = pygame.image.load(enemy_path).convert_alpha()
 
 #Keep the main image(you) on the top of all other images
-ship_path = join('images', 'ship.png')
-ship_surf = pygame.image.load(ship_path).convert_alpha()
+player_path = join('images', 'ship.png')
+player_surf = pygame.image.load(player_path).convert_alpha()
 
 #event loop
 while running:

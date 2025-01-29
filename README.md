@@ -92,3 +92,46 @@ This will make the game run much faster
 ### Display order
 The display order is important, in this example there's a background fill, a target that moves and a bunch of random footballs. If the background was created last we would only see the background.
 So we want the target on top of everything, so it should be the last thing drawn on the display canvas, and the background should be the first thing drawn.
+
+## Rects
+Places surfaces more elegantly
+Detect collisions
+Can be drawn
+
+### Placing Surfaces Sucks
+Since we always place the topleft it requires math to place it in a precist spot
+Sometimes we just need to place the center or the right side of a surface
+Rects can do this very well
+
+Rects are hyst rectangles with a size and a position
+They also have a lot of points :
+<strong>Tuples</stronhg> of an x and y position
+X or y positions
+There is aldo width, height, and size
+Each point can be measured and changed
+The points stay relative to each other - moving one you move all
+
+positions: topleft, midtop, topright, midright, bottomright, midbottom, bottomleft, midleft
+top, right, bottomn, left
+
+## 2 kinds of Rects
+### Rects and FRects
+
+They are nearly identical, the only difference is that FRects store data as floating point values while Rects use integers
+FRects are usually better since they are more precise
+
+Small Example:
+When moving player(ship) from left to right side we add it's value by 0.1 per frame
+frect will do this as expected
+rect will not because it is just an int and does not accept decimals so the 0.1 value getting added to it will get cancelled out every time
+
+### Creating Rects
+You can create a rect from scratch
+pygame.Rect(pos, size)
+pygame.FGame(post, size)
+
+Or you can create it from a surface (which is much more common):
+rect will have the game size as surface
+surface.get_rect(point = pos)
+surface.get_freact(point = pos)
+

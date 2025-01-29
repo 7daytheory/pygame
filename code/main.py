@@ -22,16 +22,14 @@ enemy_x = 50
 x = 100
 
 #importing an image
-star_path = join('images', 'star.png')
-star_surf = pygame.image.load(star_path).convert_alpha()
+star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
 star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
 
-enemy_path = join("images", "enemy.png")
-enemy_surf = pygame.image.load(enemy_path).convert_alpha()
+enemy_surf = pygame.image.load(join("images", "enemy.png")).convert_alpha()
 
 #Keep the main image(you) on the top of all other images
-ship_path = join('images', 'ship.png')
-ship_surf = pygame.image.load(ship_path).convert_alpha()
+player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
+player_rect = player_surf.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
 #event loop
 while running:
@@ -40,12 +38,11 @@ while running:
             running = False
     #draw the game
     display_surface.fill('#999999')
-    x += 0.1
-    enemy_x += 0.2
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(ship_surf, (x, 150))
     display_surface.blit(enemy_surf, (enemy_x, 450))
+    player_rect.left += 0.2
+    display_surface.blit(player_surf, player_rect)
     pygame.display.update()
 
 

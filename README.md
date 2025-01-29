@@ -113,3 +113,19 @@ The points stay relative to each other - moving one you move all
 
 positions: topleft, midtop, topright, midright, bottomright, midbottom, bottomleft, midleft
 top, right, bottomn, left
+
+## 2 kinds of Rects
+### Rects and FRects
+
+They are nearly identical, the only difference is that FRects store data as floating point values while Rects use integers
+FRects are usually better since they are more precise
+
+### Creating Rects
+You can create a rect from scratch
+pygame.Rect(pos, size)
+pygame.FGame(post, size)
+
+Or you can create it from a surface (which is much more common):
+rect will have the game size as surface
+surface.get_rect(point = pos)
+surface.get_freact(point = pos)

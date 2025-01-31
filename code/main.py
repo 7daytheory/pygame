@@ -5,21 +5,19 @@ from random import randint
 #general setup
 pygame.init()
 
-# Create a display_surface and give it a width and height
+# Global Variable
+    #Window Width and Height
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
+
+#Display Surface
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-#Setting running variable to true
+
+#Set game running to true
 running = True
 
 #Set Window title
 title = "Awesome Game Title"
 pygame.display.set_caption(title, "Enjoy!")
-
-#Display Surface
-surf = pygame.Surface((100, 200))
-surf.fill("red")
-enemy_x = 50
-x = 100
 
 #Import Images
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
@@ -42,7 +40,7 @@ while running:
     display_surface.fill('#999999')
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(enemy_surf, (enemy_x, 450))
+    display_surface.blit(enemy_surf, (50, 450))
     player_rect.left += 0.2
     display_surface.blit(laser_surf, laser_rect)
     display_surface.blit(player_surf, player_rect)

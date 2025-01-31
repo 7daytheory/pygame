@@ -6,8 +6,12 @@ from random import randint
 pygame.init()
 
 # Global Variable
-    #Window Width and Height
+    #Window Width and Height, and color
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
+surface_color = "#888888"
+    #Enemy X value, Player Move speed
+enemy_x = 50
+player_move_speed = 0.2
 
 #Display Surface
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -37,11 +41,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     #draw the game
-    display_surface.fill('#999999')
+    display_surface.fill(surface_color)
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
-    display_surface.blit(enemy_surf, (50, 450))
-    player_rect.left += 0.2
+    display_surface.blit(enemy_surf, (enemy_x, 450))
+    player_rect.left += player_move_speed
     display_surface.blit(laser_surf, laser_rect)
     display_surface.blit(player_surf, player_rect)
     pygame.display.update()

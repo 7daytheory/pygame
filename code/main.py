@@ -12,7 +12,7 @@ surface_color = "#888888"
     #Enemy X value, Player Move speed
 player_direction = -1
 enemy_x = 50
-player_move_speed = 0.4
+player_move_speed = 0.5
 
 #Display Surface
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -51,8 +51,8 @@ while running:
 
 #Add Player last to display_surfcae - so it's always on top
     player_rect.x += player_direction * player_move_speed
-    # if player_rect.right < WINDOW_WIDTH:
-    #     player_rect.left += player_move_speed
+    if player_rect.right > WINDOW_WIDTH or player_rect.left < 0:
+        player_direction *= -1  # It will go from left to right if you multiply it by -1 (swaps -1 to positive, and 1 to negative)
     display_surface.blit(player_surf, player_rect)
 
 #Update everything added to pygame display

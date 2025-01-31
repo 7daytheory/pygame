@@ -10,8 +10,9 @@ pygame.init()
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 surface_color = "#888888"
     #Enemy X value, Player Move speed
+player_direction = -1
 enemy_x = 50
-player_move_speed = 0.2
+player_move_speed = 0.4
 
 #Display Surface
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -43,13 +44,15 @@ while running:
     #draw the game
     display_surface.fill(surface_color)
     for pos in star_pos:
+        # Add items to display surface
         display_surface.blit(star_surf, pos)
-    if player_rect.right < WINDOW_WIDTH:
-        player_rect.left += player_move_speed
+        display_surface.blit(enemy_surf, (enemy_x, 450))
+        display_surface.blit(laser_surf, laser_rect)
 
-#Singular items added to display_surface
-    display_surface.blit(enemy_surf, (enemy_x, 450))
-    display_surface.blit(laser_surf, laser_rect)
+#Add Player last to display_surfcae - so it's always on top
+    player_rect.x += player_direction * player_move_speed
+    # if player_rect.right < WINDOW_WIDTH:
+    #     player_rect.left += player_move_speed
     display_surface.blit(player_surf, player_rect)
 
 #Update everything added to pygame display

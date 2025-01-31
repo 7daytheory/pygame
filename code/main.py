@@ -15,24 +15,22 @@ running = True
 title = "Awesome Game Title"
 pygame.display.set_caption(title, "Enjoy!")
 
-#Surface
+#Display Surface
 surf = pygame.Surface((100, 200))
 surf.fill("red")
 enemy_x = 50
 x = 100
 
-#importing images
+#Import Images
 star_surf = pygame.image.load(join('images', 'star.png')).convert_alpha()
-star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
-
 enemy_surf = pygame.image.load(join("images", "enemy.png")).convert_alpha()
-
-# Import laser
 laser_surf = pygame.image.load(join("images", "laser.png")).convert_alpha()
-laser_rect = laser_surf.get_frect(bottomleft = (20, WINDOW_HEIGHT - 20))
-
-#Keep the main image(you) on the top of all other images
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
+
+# Store Imported image position
+star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
+    #FRects
+laser_rect = laser_surf.get_frect(bottomleft = (20, WINDOW_HEIGHT - 20))
 player_rect = player_surf.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
 #event loop

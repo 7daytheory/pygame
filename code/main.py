@@ -44,6 +44,8 @@ while running:
     display_surface.fill(surface_color)
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
+    if player_rect.right < WINDOW_WIDTH:
+        player_rect.left += player_move_speed
 
 #Singular items added to display_surface
     display_surface.blit(enemy_surf, (enemy_x, 450))

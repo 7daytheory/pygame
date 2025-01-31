@@ -29,27 +29,29 @@ enemy_surf = pygame.image.load(join("images", "enemy.png")).convert_alpha()
 laser_surf = pygame.image.load(join("images", "laser.png")).convert_alpha()
 player_surf = pygame.image.load(join('images', 'player.png')).convert_alpha()
 
-# Store Imported image position
+# Store Imported image position/FRects
 star_pos = [(randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)) for i in range(20)] # Create tuple to store x and y before the while loop
-    #FRects
 laser_rect = laser_surf.get_frect(bottomleft = (20, WINDOW_HEIGHT - 20))
 player_rect = player_surf.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
-#event loop
 while running:
+    #event loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
     #draw the game
     display_surface.fill(surface_color)
     for pos in star_pos:
         display_surface.blit(star_surf, pos)
+
+#Singular items added to display_surface
     display_surface.blit(enemy_surf, (enemy_x, 450))
-    player_rect.left += player_move_speed
     display_surface.blit(laser_surf, laser_rect)
     display_surface.blit(player_surf, player_rect)
-    pygame.display.update()
 
+#Update everything added to pygame display
+    pygame.display.update()
 
 # Close the game properly
 pygame.quit()
